@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gaux — Free Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero-wrap">
+
+    <!-- Photo card -->
+    <div class="hero-photo">
+      <div class="hero-photo-placeholder"></div>
+      <div class="hero-overlay"></div>
+
+      <!-- Text over photo -->
+      <div class="hero-content">
+        <h1>Expert-led support<br>for <em>every stage</em><br>of parenthood</h1>
+        <p class="hero-sub">Your free preview starts here. Explore a selection of mini courses, live classes, and resources.</p>
+        <div class="hero-actions">
+          <a href="#resources" class="btn-green">Start exploring</a>
+          <a href="#" class="btn-unlock-outline">Unlock full access</a>
+        </div>
+      </div>
+
+      <!-- Wavy lines + pill inside photo card -->
+      <div class="hero-waves">
+        <canvas id="waveCanvas"></canvas>
+        <div class="wave-pill" id="wavePill">
+          <span class="pill-dot" id="pillDot"></span>
+          <span id="pillText"></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- STATS — solid blue like Maven's second section -->
+  <div class="stats-strip">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <span class="big">20+</span>
+        <span class="desc">areas of expertise covered</span>
+      </div>
+      <div class="stat-item">
+        <span class="big">175+</span>
+        <span class="desc">countries with access</span>
+      </div>
+      <div class="stat-item">
+        <span class="big">100%</span>
+        <span class="desc">of members feel more supported</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPANDING CATEGORY CARDS -->
+  <div class="expand-section">
+    <div class="expand-header">
+      <p class="section-label">Care across every stage</p>
+      <h2 class="section-title">Support for the whole journey</h2>
+    </div>
+    <div class="expand-track">
+
+      <div class="xcard">
+        <div class="xcard-bg xcard-bg-1"></div>
+        <div class="xcard-art">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="28" r="12" stroke="white" stroke-width="2"/>
+            <circle cx="52" cy="28" r="12" stroke="white" stroke-width="2"/>
+            <path d="M16 64c0-10 7-18 16-18h16c9 0 16 8 16 18" stroke="white" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="xcard-dot"></div>
+        <div class="xcard-label">
+          <h3>Family Building</h3>
+          <p>Expert guidance on conception, IVF, adoption, and every path to building your family.</p>
+        </div>
+      </div>
+
+      <div class="xcard">
+        <div class="xcard-bg xcard-bg-2"></div>
+        <div class="xcard-art">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="40" cy="44" rx="18" ry="22" stroke="white" stroke-width="2"/>
+            <circle cx="40" cy="22" r="8" stroke="white" stroke-width="2"/>
+            <path d="M28 58c-4 2-8 6-8 10h40c0-4-4-8-8-10" stroke="white" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="xcard-dot"></div>
+        <div class="xcard-label">
+          <h3>Pregnancy &amp;<br>Newborn</h3>
+          <p>Trusted support through pregnancy, birth, and your first weeks with a newborn.</p>
+        </div>
+      </div>
+
+      <div class="xcard">
+        <div class="xcard-bg xcard-bg-3"></div>
+        <div class="xcard-art">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="24" r="10" stroke="white" stroke-width="2"/>
+            <path d="M24 64c0-9 7-16 16-16s16 7 16 16" stroke="white" stroke-width="2"/>
+            <circle cx="20" cy="40" r="6" stroke="white" stroke-width="2"/>
+            <path d="M10 64c0-6 4-10 10-10" stroke="white" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="xcard-dot"></div>
+        <div class="xcard-label">
+          <h3>Parenting &amp;<br>Early Childhood</h3>
+          <p>Practical advice on development, sleep, feeding, and raising healthy kids.</p>
+        </div>
+      </div>
+
+      <div class="xcard">
+        <div class="xcard-bg xcard-bg-4"></div>
+        <div class="xcard-art">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M40 16 C28 16 20 24 20 34 C20 50 40 64 40 64 C40 64 60 50 60 34 C60 24 52 16 40 16Z" stroke="white" stroke-width="2"/>
+            <path d="M32 34 l6 6 10-10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="xcard-dot"></div>
+        <div class="xcard-label">
+          <h3>Mental Health &amp;<br>Wellbeing</h3>
+          <p>Support for mental health, identity, relationships, and the everyday systems that shape your life.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="section" id="resources" style="background: #427cfc; padding-top: 1.5rem;">
+    <div class="section-inner">
+      <div class="resources-box">
+        <p class="section-label" style="color: #427cfc; text-decoration: underline; text-decoration-color: #fce7ae; text-underline-offset: 4px; text-decoration-thickness: 2px;">What's included</p>
+        <h2 class="section-title" style="color: #427cfc;">Everything in your free preview</h2>
+        <p class="section-sub" style="color: #427cfc; font-size: 1.1rem;">Explore a selection of expert-led support, designed to fit into your life.</p>
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-img green">Mini courses</div>
+            <div class="card-body">
+              <p class="card-tag">On demand</p>
+              <h3 class="card-title">Expert-led mini courses</h3>
+              <p class="card-desc">Short, expert-led lessons you can access anytime, from planning your family to raising yours.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img sage">Live classes</div>
+            <div class="card-body">
+              <p class="card-tag">Upcoming sessions</p>
+              <h3 class="card-title">Live classes with specialists</h3>
+              <p class="card-desc">Join upcoming sessions and hear directly from trusted experts in real time.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img light">Resources</div>
+            <div class="card-body">
+              <p class="card-tag">Free to save</p>
+              <h3 class="card-title">Downloadable resources</h3>
+              <p class="card-desc">Practical guides and tools you can save and come back to anytime.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- UPGRADE -->
+  <div class="section upgrade-section">
+    <div class="section-inner">
+      <div class="upgrade-banner">
+        <div>
+          <p class="upgrade-eyebrow">This is just a preview</p>
+          <h2 class="upgrade-title">There's so much <em>more</em> inside</h2>
+          <p class="upgrade-desc">Inside the full experience, members get access to a deeper library of courses, resources, and live programming — with expert-led support across family planning, women's health, parenting, and the systems that shape everyday life.</p>
+        </div>
+        <a href="#" class="btn-cream">See full membership</a>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+  // Smooth scroll with nav offset for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href').slice(1);
+      if (!id) return;
+      const target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      const top = target.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  });
+
+  (function() {
+    const WAVES = [
+      { color: '#fce7ae', label: 'Family Building'             },
+      { color: '#13a600', label: 'Pregnancy & Newborn'         },
+      { color: '#5c0c3f', label: 'Parenting & Early Childhood' },
+      { color: '#ffb1d2', label: 'Mental Health & Wellbeing'   },
+    ];
+
+    const STUB       = 220;  // px — longer resting stubs on the left
+    const TRAVEL_MS  = 3200; // ms — slower travel feels more elegant
+    const HOLD_MS    = 1600;
+    const RETRACT_MS = 800;
+    const GAP        = 22;   // more vertical spread between lines
+
+    const canvas  = document.getElementById('waveCanvas');
+    const pill    = document.getElementById('wavePill');
+    const pillDot = document.getElementById('pillDot');
+    const pillTxt = document.getElementById('pillText');
+
+    let W, H, lineY = [], endX;
+    let current     = 0;
+    let progress    = 0;
+    let phase       = 'travel';
+    let retractP    = 0;
+    let holdTimer   = null;
+    let rafId       = null;
+    let lastTime    = null;
+
+    function resize() {
+      const rect = canvas.parentElement.getBoundingClientRect();
+      W = rect.width;
+      H = rect.height;
+      canvas.width  = W;
+      canvas.height = H;
+      const baseY  = H - 28;
+      lineY = WAVES.map((_, i) => baseY - i * GAP);
+      endX  = W - 220; // leave room for pill on the right
+    }
+
+    // Large, slow, flowing waves — fewer knots, big amplitude, wide wavelength
+    const WAVE_KNOTS = [
+      // line 0 — one long gentle S-curve
+      [ {x:0.0,y:0}, {x:0.25,y:-38}, {x:0.55,y:42}, {x:0.80,y:-22}, {x:1.0,y:0} ],
+      // line 1 — opposite phase, equally slow
+      [ {x:0.0,y:0}, {x:0.25,y:40},  {x:0.55,y:-38}, {x:0.80,y:20}, {x:1.0,y:0} ],
+      // line 2 — one big arc
+      [ {x:0.0,y:0}, {x:0.30,y:-48}, {x:0.60,y:30},  {x:0.85,y:-18},{x:1.0,y:0} ],
+      // line 3 — offset big arc
+      [ {x:0.0,y:0}, {x:0.30,y:44},  {x:0.60,y:-32}, {x:0.85,y:16}, {x:1.0,y:0} ],
+    ];
+
+    // Evaluate the spline at position t (0..1) along a line of total length targetX
+    // centerY is the line's vertical center
+    function evalWave(i, t, targetX, centerY) {
+      const knots = WAVE_KNOTS[i];
+      // find surrounding knots
+      let k0 = knots[0], k1 = knots[knots.length - 1];
+      for (let k = 0; k < knots.length - 1; k++) {
+        if (t >= knots[k].x && t <= knots[k+1].x) { k0 = knots[k]; k1 = knots[k+1]; break; }
+      }
+      const localT = k1.x === k0.x ? 0 : (t - k0.x) / (k1.x - k0.x);
+      const ease   = localT * localT * (3 - 2 * localT); // smoothstep
+      return {
+        x: t * targetX,
+        y: centerY + k0.y + (k1.y - k0.y) * ease,
+      };
+    }
+
+    function drawLine(ctx, i, drawLength, alpha) {
+      if (drawLength <= 0) return;
+      const STEPS  = 120;
+      const fullLen = endX; // use full path length as reference for wave knots
+      ctx.beginPath();
+      ctx.globalAlpha = alpha;
+      ctx.strokeStyle = WAVES[i].color;
+      ctx.lineWidth   = 2.5;
+      ctx.lineCap     = 'round';
+      ctx.lineJoin    = 'round';
+
+      const cy = lineY[i];
+      for (let s = 0; s <= STEPS; s++) {
+        const tFull = (s / STEPS);           // 0..1 along full path
+        const xFull = tFull * fullLen;
+        if (xFull > drawLength) break;
+        const pt = evalWave(i, tFull, fullLen, cy);
+        // clamp x to drawLength
+        const x = Math.min(pt.x, drawLength);
+        if (s === 0) ctx.moveTo(x, pt.y);
+        else ctx.lineTo(x, pt.y);
+      }
+      ctx.stroke();
+
+      // Dot at the tip
+      const tipT = Math.min(drawLength, fullLen) / fullLen;
+      const tip  = evalWave(i, tipT, fullLen, cy);
+      const tipX = Math.min(tip.x, drawLength);
+      ctx.beginPath();
+      ctx.arc(tipX, tip.y, 3.5, 0, Math.PI * 2);
+      ctx.fillStyle   = WAVES[i].color;
+      ctx.globalAlpha = alpha;
+      ctx.fill();
+
+      ctx.globalAlpha = 1;
+    }
+
+    // Returns the exact pixel tip — walks same loop as drawLine to find last drawn point
+    function getLineTip(i, drawLength) {
+      const STEPS   = 120;
+      const fullLen = endX;
+      const cy      = lineY[i];
+      let lastX = 0, lastY = cy;
+      for (let s = 0; s <= STEPS; s++) {
+        const tFull = s / STEPS;
+        const xFull = tFull * fullLen;
+        if (xFull > drawLength) break;
+        const pt = evalWave(i, tFull, fullLen, cy);
+        lastX = Math.min(pt.x, drawLength);
+        lastY = pt.y;
+      }
+      return { x: lastX, y: lastY };
+    }
+
+    // Per-line pixel nudge to fine-tune pill placement
+    const PILL_NUDGE = [0, -28, -28, 0];
+
+    function positionPill(i, drawLength) {
+      const tip   = getLineTip(i, drawLength);
+      const pillW = pill.offsetWidth;
+      const pillH = pill.offsetHeight;
+      const left  = Math.min(tip.x + 14 + PILL_NUDGE[i], W - pillW - 8);
+      const top   = tip.y - pillH / 2;
+      pill.style.left   = left + 'px';
+      pill.style.top    = top  + 'px';
+      pill.style.right  = 'auto';
+      pill.style.bottom = 'auto';
+    }
+
+    function draw(ts) {
+      if (!lastTime) lastTime = ts;
+      const dt = ts - lastTime;
+      lastTime = ts;
+
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, W, H);
+
+      // Draw all stub lines (inactive = short stubs at left)
+      WAVES.forEach((_, i) => {
+        if (i === current) return; // active line drawn separately
+        drawLine(ctx, i, STUB, 0.7);
+      });
+
+      // Draw active line
+      if (phase === 'travel') {
+        progress += dt / TRAVEL_MS;
+        const travelX = STUB + (endX - STUB) * easeInOut(Math.min(progress, 1));
+
+        if (progress >= 1) {
+          progress = 1;
+          phase = 'hold';
+          positionPill(current, endX);
+          pillDot.style.background = WAVES[current].color;
+          pillTxt.textContent      = WAVES[current].label;
+          pill.classList.add('show');
+          holdTimer = setTimeout(() => {
+            pill.classList.remove('show');
+            setTimeout(() => { phase = 'retract'; retractP = 0; }, 260);
+          }, HOLD_MS);
+        }
+        drawLine(ctx, current, travelX, 1);
+
+      } else if (phase === 'hold') {
+        drawLine(ctx, current, endX, 1);
+
+      } else if (phase === 'retract') {
+        retractP += dt / RETRACT_MS;
+        if (retractP >= 1) {
+          retractP = 1;
+          // move to next line
+          current  = (current + 1) % WAVES.length;
+          progress = 0;
+          phase    = 'travel';
+          lastTime = null;
+        }
+        const travelX = STUB + (endX - STUB) * (1 - easeInOut(retractP));
+        drawLine(ctx, current, travelX, 1 - retractP * 0.5);
+      }
+
+      rafId = requestAnimationFrame(draw);
+    }
+
+    function easeInOut(t) {
+      return t < 0.5 ? 2*t*t : -1+(4-2*t)*t;
+    }
+
+    function start() {
+      resize();
+      if (rafId) cancelAnimationFrame(rafId);
+      lastTime = null;
+      rafId = requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('resize', () => { resize(); });
+    setTimeout(start, 400);
+  })();
+  </script>
+</body>
+</html>
