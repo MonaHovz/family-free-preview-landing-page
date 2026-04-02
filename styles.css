@@ -565,7 +565,7 @@
       .hero-sub { font-size: 15px; margin-bottom: 1.5rem; }
 
       /* Hero image — shift left to show mother and baby */
-      .hero-photo-placeholder { background-position: left center; }
+      .hero-photo-placeholder { background-position: right center; }
 
       /* Wave pill — smaller on mobile so it fits fully within screen */
       .wave-pill {
