@@ -516,19 +516,6 @@
       max-height: 120px;
     }
 
-    /* placeholder silhouette art inside each card */
-    .xcard-art {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0.18;
-      z-index: 1;
-    }
-
-    .xcard-art svg { width: 80px; height: 80px; }
-
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .cards-grid { grid-template-columns: 1fr; }
