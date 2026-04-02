@@ -256,10 +256,11 @@
       H = rect.height;
       canvas.width  = W;
       canvas.height = H;
-      const baseY  = H - 28;
+      const baseY   = H - 28;
       lineY = WAVES.map((_, i) => baseY - i * GAP);
-      STUB  = Math.min(220, Math.floor(W * 0.16));
-      endX  = W - STUB; // leave room for pill on the right
+      STUB  = Math.min(220, Math.floor(W * 0.16)); // short stubs on the left
+      const pillRoom = Math.min(220, Math.floor(W * 0.46)); // space reserved for pill on the right
+      endX  = W - pillRoom;
     }
 
     // Large, slow, flowing waves — fewer knots, big amplitude, wide wavelength
