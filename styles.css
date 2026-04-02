@@ -9,7 +9,6 @@
 
     :root {
       --blue:       #427cfc;
-      --blue-dark:  #427cfc;
       --yellow:     #fce7ae;
       --offwhite:   #fcf9f5;
       --white:      #ffffff;
@@ -145,22 +144,6 @@
     }
     .btn-green:hover { background: var(--yellow); }
 
-    .btn-ghost {
-      background: transparent;
-      color: var(--white);
-      font-family: 'Kumbh Sans', sans-serif;
-      font-size: 14px;
-      font-weight: 500;
-      padding: 12px 26px;
-      border-radius: 6px;
-      border: 1.5px solid rgba(255,255,255,0.6);
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: background 0.15s, border-color 0.15s;
-    }
-    .btn-ghost:hover { background: rgba(255,255,255,0.1); border-color: white; }
-
     /* ── WAVY LINES ── */
     .hero-waves {
       position: absolute;
@@ -289,9 +272,11 @@
       padding: 3rem 3.5rem;
     }
 
-    .resources-box .section-title,
-    .resources-box .section-sub {
-      color: #427cfc;
+    .resources-box .section-label {
+      text-decoration: underline;
+      text-decoration-color: #fce7ae;
+      text-underline-offset: 4px;
+      text-decoration-thickness: 2px;
     }
 
     /* ── CARDS ── */
@@ -326,8 +311,8 @@
       opacity: 1;
     }
 
-    .card-img.green  { background: #fce7ae; color: #427cfc; }
-    .card-img.sage   { background: #fce7ae; color: #427cfc; }
+    .card-img.green,
+    .card-img.sage,
     .card-img.light  { background: #fce7ae; color: #427cfc; }
 
     .card-body {
@@ -357,50 +342,6 @@
       font-weight: 300;
       line-height: 1.65;
       color: var(--text-mid);
-    }
-
-    /* ── ABOUT SPLIT ── */
-    .about-section {
-      background: var(--offwhite);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-
-    .about-img {
-      border-radius: var(--radius-xl);
-      aspect-ratio: 4/3;
-      background: linear-gradient(135deg, #9ce2e2 0%, #008680 60%, #008680 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255,255,255,0.6);
-      font-family: 'PPWoodland', sans-serif;
-      font-style: italic;
-      font-size: 1rem;
-    }
-
-    .about-content .section-sub { margin-bottom: 1.5rem; }
-
-    .topics-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 1.5rem;
-    }
-
-    .topic-pill {
-      background: var(--white);
-      border: 1px solid rgba(74,124,95,0.2);
-      color: var(--text-mid);
-      font-size: 12px;
-      font-weight: 400;
-      padding: 5px 14px;
-      border-radius: 100px;
     }
 
     /* ── UPGRADE BANNER ── */
@@ -463,28 +404,6 @@
     }
     .btn-cream:hover { opacity: 0.85; }
 
-    /* ── FOOTER ── */
-    footer {
-      background: #427cfc;
-      padding: 2rem;
-      text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-
-    footer p {
-      font-size: 12px;
-      color: rgba(255,255,255,0.35);
-      font-weight: 300;
-    }
-
-    footer .footer-logo {
-      font-family: 'PPWoodland', sans-serif;
-      font-size: 1.2rem;
-      color: var(--white);
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-
     /* ── EXPANDING CARDS SECTION ── */
     .expand-section {
       background: #427cfc;
@@ -531,10 +450,10 @@
 
     .xcard:hover .xcard-bg { transform: scale(1.04); }
 
-    .xcard-bg-1 { background-image: url('images/card1.jpg'); background-size: cover; background-position: center; }
-    .xcard-bg-2 { background-image: url('images/card2.jpg'); background-size: cover; background-position: center; }
-    .xcard-bg-3 { background: linear-gradient(160deg, #427cfc 0%, #427cfc 50%, #427cfc 100%); }
-    .xcard-bg-4 { background: linear-gradient(160deg, #427cfc 0%, #427cfc 50%, #427cfc 100%); }
+    .xcard-bg-1 { background-image: url('images/card1.jpg'); }
+    .xcard-bg-2 { background-image: url('images/card2.jpg'); }
+    .xcard-bg-3,
+    .xcard-bg-4 { background: #427cfc; }
 
     /* dark overlay */
     .xcard::after {
@@ -612,13 +531,8 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      .hero { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.25rem; }
-      .hero-image { aspect-ratio: 3/2; }
       .cards-grid { grid-template-columns: 1fr; }
       .stats-inner { grid-template-columns: 1fr; gap: 1.5rem; }
-      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
       .expand-track { height: auto; flex-direction: column; }
       .xcard { flex: none !important; height: 220px; }
-      
-      .nav-links { display: none; }
     }
