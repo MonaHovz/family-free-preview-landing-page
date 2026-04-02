@@ -429,24 +429,45 @@
     setTimeout(start, 400);
   })();
 
-  // Auto-expand the centred card in the carousel on mobile only
+  // Carousel snap + auto-expand on mobile only
   if ('ontouchstart' in window) {
     const track = document.querySelector('.expand-track');
     const cards = Array.from(document.querySelectorAll('.xcard'));
     if (track && cards.length) {
-      function updateActiveCard() {
+
+      function nearestCard() {
         const trackCenter = track.scrollLeft + track.offsetWidth / 2;
-        let closest = cards[0];
-        let closestDist = Infinity;
-        cards.forEach(card => {
-          const dist = Math.abs((card.offsetLeft + card.offsetWidth / 2) - trackCenter);
-          if (dist < closestDist) { closestDist = dist; closest = card; }
+        return cards.reduce((closest, card) => {
+          const d = Math.abs((card.offsetLeft + card.offsetWidth / 2) - trackCenter);
+          const cd = Math.abs((closest.offsetLeft + closest.offsetWidth / 2) - trackCenter);
+          return d < cd ? card : closest;
         });
-        cards.forEach(c => c.classList.remove('expanded'));
-        closest.classList.add('expanded');
       }
-      track.addEventListener('scroll', updateActiveCard, { passive: true });
-      updateActiveCard(); // expand first card on load
+
+      function snapToCard(card) {
+        const target = card.offsetLeft + card.offsetWidth / 2 - track.offsetWidth / 2;
+        track.scrollTo({ left: target, behavior: 'smooth' });
+      }
+
+      function updateActive() {
+        const card = nearestCard();
+        cards.forEach(c => c.classList.remove('expanded'));
+        card.classList.add('expanded');
+      }
+
+      let snapTimer;
+      track.addEventListener('scroll', () => {
+        updateActive();
+        clearTimeout(snapTimer);
+        snapTimer = setTimeout(() => {
+          const card = nearestCard();
+          snapToCard(card);
+          updateActive();
+        }, 80);
+      }, { passive: true });
+
+      // Initialise: centre first card
+      setTimeout(() => { snapToCard(cards[0]); updateActive(); }, 50);
     }
   }
   </script>
