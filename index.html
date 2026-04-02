@@ -429,15 +429,25 @@
     setTimeout(start, 400);
   })();
 
-  // Touch-to-expand for category cards on mobile
+  // Auto-expand the centred card in the carousel on mobile only
   if ('ontouchstart' in window) {
-    document.querySelectorAll('.xcard').forEach(card => {
-      card.addEventListener('click', () => {
-        const isExpanded = card.classList.contains('expanded');
-        document.querySelectorAll('.xcard').forEach(c => c.classList.remove('expanded'));
-        if (!isExpanded) card.classList.add('expanded');
-      });
-    });
+    const track = document.querySelector('.expand-track');
+    const cards = Array.from(document.querySelectorAll('.xcard'));
+    if (track && cards.length) {
+      function updateActiveCard() {
+        const trackCenter = track.scrollLeft + track.offsetWidth / 2;
+        let closest = cards[0];
+        let closestDist = Infinity;
+        cards.forEach(card => {
+          const dist = Math.abs((card.offsetLeft + card.offsetWidth / 2) - trackCenter);
+          if (dist < closestDist) { closestDist = dist; closest = card; }
+        });
+        cards.forEach(c => c.classList.remove('expanded'));
+        closest.classList.add('expanded');
+      }
+      track.addEventListener('scroll', updateActiveCard, { passive: true });
+      updateActiveCard(); // expand first card on load
+    }
   }
   </script>
 </body>
