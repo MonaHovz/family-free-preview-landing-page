@@ -329,8 +329,8 @@
     }
 
     .card-tag-1 { background: rgba(66,124,252,0.12); color: #427cfc; border: 1px solid rgba(66,124,252,0.3); }
-    .card-tag-2 { background: rgba(252,231,174,0.15); color: #c8920a; border: 1px solid rgba(200,146,10,0.35); }
-    .card-tag-3 { background: rgba(19,166,0,0.1);    color: #13a600; border: 1px solid rgba(19,166,0,0.3); }
+    .card-tag-2 { background: rgba(92,12,63,0.12);  color: #5c0c3f; border: 1px solid rgba(92,12,63,0.3); }
+    .card-tag-3 { background: rgba(19,166,0,0.12);  color: #13a600; border: 1px solid rgba(19,166,0,0.3); }
 
     .card-title {
       font-family: 'PPWoodland', sans-serif;
