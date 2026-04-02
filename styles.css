@@ -585,25 +585,28 @@
       .expand-section { padding: 1.5rem 0 3rem; }
       .expand-header { margin-bottom: 1.25rem; padding: 0 0.75rem; }
       .expand-track {
+        display: flex !important;
+        width: 100%;
         height: auto;
         overflow-x: scroll;
         scroll-snap-type: x mandatory;
         overscroll-behavior-x: contain;
         scrollbar-width: none;
-        gap: 10px;
+        gap: 0;
         padding: 0;
       }
       .expand-track::-webkit-scrollbar { display: none; }
       .xcard {
-        flex: 0 0 82vw !important;
+        flex: 0 0 100vw !important;
         height: 260px;
-        scroll-snap-align: center;
+        scroll-snap-align: start;
         scroll-snap-stop: always;
         transition: height 0.4s ease;
+        padding: 0 9vw;
+        box-sizing: border-box;
       }
-      /* First/last margin so cards can scroll to true center */
-      .xcard:first-child { margin-left: 9vw; }
-      .xcard:last-child  { margin-right: 9vw; }
+      .xcard:first-child { padding-left: 9vw; }
+      .xcard:last-child  { padding-right: 9vw; }
       .xcard-label h3 { font-size: 0.95rem; }
       /* Tap to expand — grows taller to reveal description */
       .xcard.expanded { height: 360px; }
