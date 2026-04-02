@@ -291,14 +291,14 @@
     }
 
     .card {
-      background: #1a1a2a;
+      background: #fce7ae;
       border-radius: var(--radius-lg);
       overflow: hidden;
       transition: box-shadow 0.2s, transform 0.2s;
     }
 
     .card:hover {
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 32px rgba(66,124,252,0.15);
       transform: translateY(-2px);
     }
 
@@ -336,7 +336,7 @@
       font-family: 'PPWoodland', sans-serif;
       font-size: 1.25rem;
       font-weight: 400;
-      color: var(--white);
+      color: #427cfc;
       margin-bottom: 0.6rem;
       line-height: 1.25;
     }
@@ -345,7 +345,7 @@
       font-size: 0.92rem;
       font-weight: 300;
       line-height: 1.65;
-      color: rgba(255,255,255,0.55);
+      color: #427cfc;
       margin-bottom: 1.2rem;
     }
 
@@ -353,11 +353,11 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      border-top: 1px solid rgba(66,124,252,0.2);
       padding: 1rem 0 1.2rem;
       font-size: 0.88rem;
       font-weight: 300;
-      color: rgba(255,255,255,0.5);
+      color: #427cfc;
     }
 
     .card-dot {
