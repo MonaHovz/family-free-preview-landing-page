@@ -429,23 +429,45 @@
     setTimeout(start, 400);
   })();
 
-  // Auto-expand the centred card as you swipe — mobile only
+  // Carousel snap + auto-expand on mobile only
   if ('ontouchstart' in window) {
     const track = document.querySelector('.expand-track');
     const cards = Array.from(document.querySelectorAll('.xcard'));
     if (track && cards.length) {
-      function updateActive() {
+
+      function nearestCard() {
         const trackCenter = track.scrollLeft + track.offsetWidth / 2;
-        const card = cards.reduce((closest, c) => {
-          const d = Math.abs((c.offsetLeft + c.offsetWidth / 2) - trackCenter);
+        return cards.reduce((closest, card) => {
+          const d = Math.abs((card.offsetLeft + card.offsetWidth / 2) - trackCenter);
           const cd = Math.abs((closest.offsetLeft + closest.offsetWidth / 2) - trackCenter);
-          return d < cd ? c : closest;
+          return d < cd ? card : closest;
         });
+      }
+
+      function snapToCard(card) {
+        const target = card.offsetLeft + card.offsetWidth / 2 - track.offsetWidth / 2;
+        track.scrollTo({ left: target, behavior: 'smooth' });
+      }
+
+      function updateActive() {
+        const card = nearestCard();
         cards.forEach(c => c.classList.remove('expanded'));
         card.classList.add('expanded');
       }
-      track.addEventListener('scroll', updateActive, { passive: true });
-      cards[0].classList.add('expanded');
+
+      let snapTimer;
+      track.addEventListener('scroll', () => {
+        updateActive();
+        clearTimeout(snapTimer);
+        snapTimer = setTimeout(() => {
+          const card = nearestCard();
+          snapToCard(card);
+          updateActive();
+        }, 80);
+      }, { passive: true });
+
+      // Initialise: centre first card
+      setTimeout(() => { snapToCard(cards[0]); updateActive(); }, 50);
     }
   }
   </script>
