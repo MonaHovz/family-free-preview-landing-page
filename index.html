@@ -230,7 +230,7 @@
       { color: '#ffb1d2', label: 'Mental Health & Wellbeing'   },
     ];
 
-    const STUB       = 220;  // px — longer resting stubs on the left
+    let   STUB       = 220;  // recalculated in resize() for narrow screens
     const TRAVEL_MS  = 3200; // ms — slower travel feels more elegant
     const HOLD_MS    = 1600;
     const RETRACT_MS = 800;
@@ -258,7 +258,8 @@
       canvas.height = H;
       const baseY  = H - 28;
       lineY = WAVES.map((_, i) => baseY - i * GAP);
-      endX  = W - 220; // leave room for pill on the right
+      STUB  = Math.min(220, Math.floor(W * 0.38));
+      endX  = W - STUB; // leave room for pill on the right
     }
 
     // Large, slow, flowing waves — fewer knots, big amplitude, wide wavelength
@@ -426,6 +427,17 @@
     window.addEventListener('resize', () => { resize(); });
     setTimeout(start, 400);
   })();
+
+  // Touch-to-expand for category cards on mobile
+  if ('ontouchstart' in window) {
+    document.querySelectorAll('.xcard').forEach(card => {
+      card.addEventListener('click', () => {
+        const isExpanded = card.classList.contains('expanded');
+        document.querySelectorAll('.xcard').forEach(c => c.classList.remove('expanded'));
+        if (!isExpanded) card.classList.add('expanded');
+      });
+    });
+  }
   </script>
 </body>
 </html>
