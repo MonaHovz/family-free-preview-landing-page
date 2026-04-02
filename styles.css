@@ -581,14 +581,29 @@
       .stat-item .big { font-size: 1.9rem; }
       .stat-item .desc { font-size: 0.78rem; }
 
-      /* Expand section — keep horizontal, reduce height */
-      .expand-section { padding: 1.5rem 0.75rem 3rem; }
-      .expand-header { margin-bottom: 1.25rem; }
-      .expand-track { height: 200px; gap: 8px; }
+      /* Expand section — horizontal swipe carousel */
+      .expand-section { padding: 1.5rem 0 3rem; }
+      .expand-header { margin-bottom: 1.25rem; padding: 0 0.75rem; }
+      .expand-track {
+        height: auto;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 10px;
+        padding: 0 1rem;
+        scroll-padding-left: 1rem;
+      }
+      .expand-track::-webkit-scrollbar { display: none; }
+      .xcard {
+        flex: 0 0 82vw !important;
+        height: 260px;
+        scroll-snap-align: start;
+        transition: height 0.4s ease;
+      }
       .xcard-label h3 { font-size: 0.95rem; }
-
-      /* Tap to expand on touch devices */
-      .xcard.expanded { flex: 3 !important; }
+      /* Tap to expand — grows taller to reveal description */
+      .xcard.expanded { height: 360px; }
       .xcard.expanded .xcard-label p { opacity: 1; max-height: 120px; }
 
       /* Sections */
